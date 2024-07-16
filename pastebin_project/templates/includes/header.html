@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PASTEBIN</title>
+	{% load static %}
+	<link rel=stylesheet type=text/css href="{% static 'css/prism.css' %}">
+	<script src="{% static 'js/prism.js' %}"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+				.header {
+					margin: 0px;
+    			padding: 1.5rem;
+    			color: #370268;
+    			font-size: 24px;
+    			background-color: #ffc0cb9c;
+				}
+
+				.header a {
+					padding: 12px;
+					text-decoration: none
+				}
+
+				.header a.site-logo {
+  				font-size: 25px;
+  				font-family: monospace;
+  				color: #370268;
+					font-weight: bold;
+				}
+
+				.header-right {
+					float: right;
+				}
+
+				.header a.active {
+					background-color: #370268;
+  				color: white;
+				}
+		</style>
+</head>
+
+<body>
+<div class="header">
+  <a href="/" class="site-logo">PASTEBIN</a>
+  <div class="header-right">
+    <a class="active" href="/">New Paste</a>
+    <a href='/view' style="color: #370268; font-weight: bold;">View Paste</a>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<title>PASTEBIN</title>
+		{% include "includes/header.html" %}
+		{% load static %}
+		<style>
+				body {
+  				margin: 0px;
+  				padding: 0px;
+  			}
+
+  			.text-style {
+					color: #370268;
+					font-size: 22px;
+  			}
+  	</style>
+</head>
+<body background="{% static 'files/asuka-gif.gif' %}">
+<div class="center">
+		<h2 class="text-style">Data</h2>
+		<div>
+				<div>
+						<div class="text-style">
+								{{size}}
+						</div>
+						<br>
+						<hr color="4px solid #780b0b">
+						<div>
+<pre>
+<code class="language-{{lang}}">
+{{paste| safe}}
+</code>
+</pre>
+						</div>
+				</div>
+		</div>
+</div>
+{% include "includes/footer.html" %}
+</body>
+</html>

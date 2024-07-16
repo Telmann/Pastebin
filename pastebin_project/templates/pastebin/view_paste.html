@@ -1,0 +1,54 @@
+{% load static %}
+{% include "includes/header.html" %}
+
+<style>
+		body {
+			margin: 0px;
+			padding: 0px;
+		}
+		.center {
+			width: 55%;
+			padding: 15px;
+			margin: auto;
+			border-bottom: 3px solid #780b0b;
+		}
+
+		.input {
+			border-color: #370268;
+			color: #201828;
+			text-align: center;
+			font-size: 21px;
+			background: transparent;
+			margin: 8px 3px;
+			padding: 15px 30px;
+			font-weight: bold;
+			width: 444px;
+		}
+
+		.submit-button {
+			cursor: pointer;
+			border-color: #370268;
+			color: #201828;
+			text-align: center;
+			font-size: 21px;
+			background: transparent;
+			margin: 8px 3px;
+			padding: 15px 30px;
+			font-weight: bold;
+		}
+</style>
+
+<body background="{% static 'files/asuka-gif.gif' %}">
+<main>
+<div class='center'>
+		<form method='POST' class='frm'>
+			<input type='text' name='url' class='input' placeholder='URL: '>
+				<button type='submit' class='submit-button'>View Paste</button>
+		</form>
+		<br/>
+		<font style="color: #420606; font-size: 27px; text-align: center;">{{ msg }}</font>
+</div>
+</main>
+
+{% include "includes/footer.html" %}
+</body>

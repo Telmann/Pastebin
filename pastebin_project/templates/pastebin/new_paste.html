@@ -1,0 +1,116 @@
+{% load static %}
+{% include "includes/header.html" %}
+<body background="{% static 'files/asuka-gif.gif' %}">
+		<style>
+				body {
+  				margin: 0px;
+  				padding: 0px;
+  			}
+
+  			.tired {
+					background-color: transparent;
+  			}
+
+				.center {
+					color: #370268;
+					width: 55%;
+  				border-left: 4px solid #780b0b;
+					margin: auto;
+					height: fit-content;
+					display: inline-block;
+					vertical-align: top;
+				}
+
+				.left {
+					text-align: left;
+					margin: 10px;
+					display: inline-block;
+  				border: 3px solid #780b0b;
+  				padding: 1rem 1rem;
+  				vertical-align: top;
+  				color: #370268;
+				}
+
+				h2 {
+					text-align: center;
+					font-size: 24px;
+					font-weight: bold;
+				}
+
+				.custom-select {
+				width: 100px;
+				font-family: "Lucida Console";
+				display: inline;
+				}
+
+				.text-to-highlight {
+					color: red;
+				}
+
+				textarea {
+					background: transparent;
+					border-color: #d6044d;
+					border-width: 6px;
+					padding-left: 3%;
+					padding-right: 3%;
+					padding-top: 3%;
+					font-size: 16px;
+				}
+
+				.submit-button {
+					cursor: pointer;
+					border-color: #370268;
+					color: #201828;
+					text-align: center;
+					font-size: 21px;
+					background: transparent;
+					margin: 8px 3px;
+					padding: 15px 30px;
+					font-weight: bold;
+				}
+
+				.txt {
+				color: white;
+				font-weight: bold;
+				}
+			}
+		</style>
+<form method='POST'>
+<div class="left" style="margin-left: 30px;">
+			<h2>Optional Settings</h2>
+		<hr align="left" width="100%" color="4px solid #780b0b">
+		<br>
+		<font style="monospace">Syntax Highlighting: </font>
+		<div class="custom-select"><select name="lang">
+			<option class="text-to-highlight" value="None">None</option>
+			<option class="text-to-highlight" value="C">C</option>
+			<option class="text-to-highlight" value="C#">C#</option>
+			<option class="text-to-highlight" value="C++">C++</option>
+			<option class="text-to-highlight" value="Go">Go</option>
+			<option class="text-to-highlight" value="Javascript">Javascript</option>
+			<option class="text-to-highlight" value="Ruby">Ruby</option>
+			<option class="text-to-highlight" value="Css">Css</option>
+			<option class="text-to-highlight" value="Rust">Rust</option>
+			<option class="text-to-highlight" value="Kotlin">Kotlin</option>
+			<option class="text-to-highlight" value="Git">Git</option>
+			<option class="text-to-highlight" value="Python">Python</option>
+ 		</select>
+		</div>
+</div>
+
+<div class="center" style="margin-left: 75px;">
+	<h2 class="new-paste-line">New Paste</h2>
+			<textarea spellcheck="false"
+								  onkeydown="if(event.keyCode===9)
+								  {var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);
+								  this.selectionStart=this.selectionEnd=s+1;return false;}"
+								  placeholder="Paste Your Code right here!" cols="60" rows="20" name="text" class="txt" style="width: 763px; height: 370px;"></textarea>
+		<br><br>
+    <br><br>
+		<button type="submit" class="submit-button">Submit</button>
+</div>
+</form>
+	{% include "includes/footer.html" %}
+<script src="{% static '/js/new_paste_script.js' %}"></script>
+</body>
+</html>
