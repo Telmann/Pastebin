@@ -15,6 +15,20 @@
 					color: #370268;
 					font-size: 22px;
   			}
+
+  			.raw-link {
+					cursor: pointer;
+					border-color: #370268;
+					color: #201828;
+					text-align: center;
+					font-size: 21px;
+					background: transparent;
+					padding: 15px 30px;
+					font-weight: bold;
+					text-decoration: none; /* Убираем подчеркивание */
+					display: inline-block; /* Чтобы элемент вел себя как кнопка */
+					border: 3px solid #370268;
+				}
   	</style>
 </head>
 <body background="{% static 'files/asuka-gif.gif' %}">
@@ -25,6 +39,7 @@
 						<div class="text-style">
 								{{size}}
 						</div>
+								<a href='{{url}}/raw' class="raw-link">RAW PASTE</a>
 						<br>
 						<hr color="4px solid #780b0b">
 						<div>

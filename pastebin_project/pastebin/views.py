@@ -70,9 +70,17 @@ def view_page(request):
 def paste_page(request, name):
     text = sql_get_request("SELECT data FROM pastes WHERE url=%s;", name)
     if len(text) == 0:
-        return HttpResponse("Text box is empty. Something was wrong with your paste..")  # create html file with the same text but with background gif and other website style
+        return HttpResponse(
+            "Text box is empty. Something was wrong with your paste..")  # create html file with the same text but with background gif and other website style
     lang = sql_get_request("SELECT lang FROM pastes WHERE url=%s;", name)[0][0]
     text = escape_html_chars(text[0][0])
     text_size = size_converting(getsizeof(text))
     template_name = '../templates/pastebin/existing_paste.html'
-    return render(request, template_name, {'url': name, 'size': text_size, 'lang': lang, 'paste': text })
+    return render(request, template_name, {'url': name, 'size': text_size, 'lang': lang, 'paste': text})
+
+
+def raw_page(request, name):
+    paste_text = sql_get_request("SELECT data FROM pastes WHERE url=%s;", name)
+    text = escape_html_chars(paste_text[0][0])
+    template_name = '../templates/pastebin/raw_paste.html'
+    return render(request, template_name, {'text': text})

@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pastebin.urls')),
     path('<name>', include('pastebin.urls')),
-    path('view', include('pastebin.urls'))
+    path('view', include('pastebin.urls')),
+    path('raw', include('pastebin.urls')),
 ]
